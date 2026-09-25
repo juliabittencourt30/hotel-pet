@@ -5,3 +5,5 @@ import DefaultLayout from './components/layout/DefaultLayout.vue';
 <template>
 <DefaultLayout />
 </template>
+<style scoped>
+</style>
