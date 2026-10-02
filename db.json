@@ -35,6 +35,24 @@
       "especie": "Cachorro",
       "tutorid": "2",
       "id": "4V2jcQ-4tT4"
+    },
+    {
+      "nome": "lilika",
+      "especie": "Cachorro",
+      "tutorid": "2",
+      "id": "70gIiK0jCb0"
+    },
+    {
+      "nome": "frg",
+      "especie": "gato",
+      "tutorid": "1",
+      "id": "5JrsxRD0R5U"
+    },
+    {
+      "nome": "ddddd",
+      "especie": "gato",
+      "tutorid": "2",
+      "id": "7w_d3gZcTVE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
