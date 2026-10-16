@@ -15,10 +15,11 @@ async function carregarDados() {
 }
 function nomeDoTutor(tutorId) {
   for (const tutor of tutores.value) {
-    if (tutor.id === tutorId) {
+    if (String(tutor.id) === String(tutorId)) {
       return tutor.nome;
     }
   }
+
   return 'Tutor não encontrado';
 }
 

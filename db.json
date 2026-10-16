@@ -1,21 +1,41 @@
+
 {
   "tutores": [
     {
       "id": "1",
-      "nome": "Ana",
-      "telefone": "47999990000"
-    },
-    {
-      "id": "2",
       "nome": "Carlos",
       "telefone": "47988880000"
     },
     {
-      "nome": "julia",
-      "telefone": "99999999999999",
-      "id": "j8OqSp4IUy0"
+      "id": "2",
+      "nome": "Julia",
+      "telefone": "99999999999999"
+    },
+    {
+      "id": "3",
+      "nome": "Julia",
+      "telefone": "5555555555"
     }
   ],
-  "pets": [],
+  "pets": [
+    {
+      "id": "1",
+      "nome": "lilika",
+      "especie": "Cachorro",
+      "tutorId": "2"
+    },
+    {
+      "id": "2",
+      "nome": "lilika",
+      "especie": "gato",
+      "tutorId": "1"
+    },
+    {
+      "id": "3",
+      "nome": "lilika",
+      "especie": "Cachorro",
+      "tutorId": "1"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

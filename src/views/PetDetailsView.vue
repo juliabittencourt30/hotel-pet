@@ -1,31 +1,31 @@
+
 <script setup>
 import { onMounted, ref } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { useRoute, RouterLink } from 'vue-router';
 
-// chamando minha useRouter
 const route = useRoute();
+const API_URL = 'http://localhost:3000';
 
-// Chamando nossa API
-const API_URL = 'https://localhost:3000';
-
-//criando as variaveis reativas para armazenar os dados do pet e do tutor
 const pet = ref({});
 const tutor = ref({});
 
-// função para carregar os dados do pet e do tutor
 async function carregandoPet() {
   try {
-    const respostaPets = await fetch(`${API_URL}/pets/${route.params.id}`);
+    const respostaPets = await fetch(
+      `${API_URL}/pets/${route.params.id}`,
+    );
 
     if (!respostaPets.ok) {
       console.log('Ops, Pet não encontrado!');
+      return;
     }
 
-    pets.value = await respostaPets.json();
+    pet.value = await respostaPets.json();
 
     const respostaTutor = await fetch(
       `${API_URL}/tutores/${pet.value.tutorId}`,
     );
+
     tutor.value = respostaTutor.ok
       ? await respostaTutor.json()
       : { nome: 'Tutor não encontrado' };
@@ -38,7 +38,15 @@ onMounted(carregandoPet);
 </script>
 
 <template>
-  <h1>Nome: {{ pet.nome }}</h1>
-  <p>Espécie: {{ pet.especie }}</p>
- <!-- <p>Tutor: {{ nomeDoTutor(pet.tutorId) }}</p>-->
+  <div>
+    <h1 class="text-2xl font-bold mb-4">Detalhes do Pet</h1>
+
+    <p><strong>Nome:</strong> {{ pet.nome }}</p>
+    <p><strong>Espécie:</strong> {{ pet.especie }}</p>
+    <p><strong>Tutor:</strong> {{ tutor.nome }}</p>
+
+    <RouterLink to="/pets" class="btn btn-secondary">
+      Voltar
+    </RouterLink>
+  </div>
 </template>

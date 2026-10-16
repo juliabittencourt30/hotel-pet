@@ -20,7 +20,7 @@ async function carregarTutores() {
 const novoPet = ref({
   nome: '',
   especie: '',
-  tutorid: '',
+  tutorId: '',
 });
 
 async function salvarPet() {
@@ -99,7 +99,7 @@ onMounted(carregarTutores);
           Tutor</label
         >
         <select
-          v-model="novoPet.tutorid"
+          v-model="novoPet.tutorId"
           required
           class="form-select"
         >
